@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background-color: aqua;
+    display: flex;
+}
+
+.panel {
+    height: 100vh;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    transition: all .3s;
+}
+
+.left {
+    background-image: url('./images/background1.jpg');
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right {
+    background-image: url('./images/background2.jpg');
+}
+
+.overlay {
+    height: 100vh;
+    width: 0;
+    background-color: rgba(255,255,255,.3);
+    transition: all .3s;
+}
+
+.left:hover .overlay {
+    width: 40vh;
+}
+
+.right:hover .overlay {
+    width: 40vh;
+}
