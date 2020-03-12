@@ -6,10 +6,11 @@
 .main {
     background-color: aqua;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .panel {
-    height: 100vh;
+    height: 50vh;
     width: 50%;
     background-size: cover;
     background-position: center;
@@ -19,30 +20,67 @@
 }
 
 .left {
-    background-image: url('./images/background1.jpg');
     justify-content: flex-end;
 }
 
+.l-top {
+    background-color: blueviolet;
+}
+
+.r-top {
+    background-color: goldenrod;
+}
+
+.l-bot {
+    background-color: lightblue;
+}
+
+.r-bot {
+    background-color: lightseagreen;
+}
+
 .right {
-    background-image: url('./images/background2.jpg');
     flex-direction: row-reverse;
 }
 
 .overlay {
-    height: 100vh;
-    flex-basis: 0;
+    height: 50vh;
+    width: 40vh;
+    transform: scaleX(0);
     background-color: rgba(255,255,255,.3);
-    transition: all .3s;
+    transition: all .3s ease-in;
+    position: absolute;
 }
 
-.left:hover .overlay {
-    flex-basis: 60vh;
+.l-overlay {
+    transform-origin: 100%;
 }
 
-.right:hover .overlay {
-    flex-basis: 60vh;
+.r-overlay {
+    transform-origin: 0%;
+}
+
+.right:hover .r-overlay {
+    transform: scaleX(1);
+    /* transform: translateX(0vh); */
+}
+
+.left:hover .l-overlay {
+    transform: scaleX(1);
+    /* transform: translateX(0vh); */
+}
+
+.content {
+    width: 30vh;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 20px;
 }
 
 .heading {
-    width: 0;
+    margin: 3rem 0;
+}
+
+.project-info {
+    margin-bottom: 2rem;
 }
